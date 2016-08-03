@@ -1,0 +1,7 @@
+<resources>
+    <!--Đây là tên app nà, e có thể đổi ở đây-->
+    <string name="app_name">ExampleTab</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

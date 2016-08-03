@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.loan.exampletab">
+    <uses-permission android:name="android.permission.READ_CONTACTS">
+    </uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE">
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <!--E thêm quyteenf vào chỗ này nha-->
+    <!--còn quyền gì thì e tự reserch, ng ta chỉ hết rồi-->
+    <!--Ok chưa e>?.. anh noi lai cho nay nay-->
+
+    <!-- File này là quan trọng nhất của 1 app, kiểu như nó nắm đầu á -->
+    <!-- hàng đầu là cho phép app backup ko -->
+    <!-- hàng 2 là quy định icon cho app, e có thể kiếm icon loại 32x32 or 64x64 làm icon -->
+    <!-- Tiếp theo là tên app, đổi nó chỗ nãy a chỉ là bên này nó theo -->
+    <!-- Nếu app nhiều activity mà e tạo activity bằng cách thủ công thì thêm activity vào -->
+    <!-- name là dẫn tới activity đó -->
+    <!-- vậy là được, ở đây trùng mmmain nên nó báo lỗi, vì mình có 1 activity mà -->
+    <!-- e chú ý cái thẻ  <intent-filter>, nó nhỏ nhưng có võ nhá, chõ này mà đi phỏng vấn 10 thằng fail 9 đó -->
+    <!-- cái hàng .Main là quy định activity đó làm main (main khác với chạy đầuf) -->
+    <!-- thẻ có chữ LAUNCHẺR là quy định activity đó chạy đầu tiên khi mở app lên, -->
+    <!-- Sau này, app e nhiều activity, e muốn thằng nào chạy đầu thì thêm cái cụm a vừa bôi lại, ko muốn nó làm mai thì bỏ thẻ main đi -->
+    <!-- và bỏ luôn cái cụm đó ở chỗ activity cũ, tức là 1 app chỉ được 1 activity chạy đầu tiên -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <!--bây giờ e có thêm 1 thằng activity thứ 2 nhá, giờ a muốn cái acti này chạy đầu tiên thì làm như sau-->
+        <!--chỉ chạy đầu thôi chớ main a vẫn để thằng cũ-->
+        <!--Vậy là xong, còn nếu như a muons nó là main và chạy đầu luôn thì -->
+        <!--e hiểu chưa?, hieu r ạ-->
+        <!--Giờ e run app sẽ thấy nó trống trơn nà. vì activity 2 nó rỗng.. ok a-->
+        <!--<activity android:name=".MainActivity">-->
+        <!--</activity>-->
+    </application>
+
+</manifest>

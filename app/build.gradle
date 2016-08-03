@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23 //Đây là công cụ build thư viện, chỗ này 23 thì bên dươi compile phải là 23.x.x
+    //Muốn dùng thư viện phiên bản 24.x.x thì đổi chỗ này là 24
+    buildToolsVersion "24.0.0" //Đây là công cụ build app, phiên bản mới nhất là 24.0.0, nếu đôi lúc e build bị lỗi linh tinh
+    //Như ko nhận R hay mất thư viện cơ bản thì vào đây đổi phiên bản. ví dụ như 23.0.3, 23.3.0, 23.0.0
+    //Đổi xong gì thì trên thanh sẽ (vàng ở trên) có sync Now, e chọn nó phát rồi ngồi uống cafe chờ
+    //Compile nhiều thư viện là e phải ướng hết thùng cafe nó mới xong lận á
+    //Đơn giản nhỡ. Xong file build nhá, sau sửa gì biết mà sửa :D
+
+    defaultConfig {
+        applicationId "com.example.loan.exampletab"
+        minSdkVersion 15  //Đây là phiên bản api nhỏ nhất mà chạy đc app này
+        targetSdkVersion 22 //Đây là bản cao nhất mà app này hổ trợ
+        versionCode 1 //Đây là phiên bản code, app lớn thì cần đổi chớ ko cứ để nguyên 1
+        versionName "1.0 Beta" //Đây là tên phien bản, ví dụ app e chưa làm xong thì để tên 0.x beta chẳng hạn, nói
+        //Chung là e thích ghi gì ghi, mở thông tin trong máy sẽ hiện phiên bản của app
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0' //Thư viện là đoạn bên dưới đây, thêm gì là compile nó vào
+    compile 'com.android.support:support-v4:23.4.0'  //Dùng control gì là người ta đều chỉ thư viện cho e hết á, copy quăng zô
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-annotations:23.4.0'
+}
